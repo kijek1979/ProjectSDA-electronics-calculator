@@ -2,6 +2,7 @@ package com.electronics_elements_calculator;
 
 
 import com.electronics_elements_calculator.model.Resistor;
+import com.electronics_elements_calculator.model.ResistorStrapsColors;
 import com.electronics_elements_calculator.service.ResistorService;
 import org.junit.Assert;
 import org.junit.Before;
@@ -14,7 +15,8 @@ public class ResistorServiceTest {
 
     @Before
     public void createResistor(){
-         resistor = new Resistor(34523523L, "żółty","czarny", "czarny", "czerwony");
+         resistor = new Resistor( ResistorStrapsColors.ZOLTY,ResistorStrapsColors.CZARNY,
+                 ResistorStrapsColors.CZARNY, ResistorStrapsColors.CZERWONY);
     }
 
     @Before
@@ -41,6 +43,11 @@ public class ResistorServiceTest {
     public void isToleranceValueMethodWorking(){
         Double expectedValue = 2.0;
         Assert.assertEquals(expectedValue ,resistorService.toleranceValue(resistor));
+    }
+
+    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    public void  isArrayIndexOutOfBoundsExceptionWorking(){
+        resistorService.elementRemoveFromList(3);
     }
 
 

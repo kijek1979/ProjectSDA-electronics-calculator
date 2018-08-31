@@ -2,27 +2,34 @@ package com.electronics_elements_calculator.model;
 
 
 import lombok.Data;
+import org.springframework.stereotype.Service;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
+@Entity
 @Data
+@Service
 public class Resistor {
+
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String strap1;
-    private String strap2;
-    private String multiplier;
-    private String tolerance;
+    private ResistorStrapsColors strap1;
+    private ResistorStrapsColors strap2;
+    private ResistorStrapsColors multiplier;
+    private ResistorStrapsColors tolerance;
+
 
     public Resistor() {
     }
 
-    public Resistor(Long id, String strap1, String strap2, String multiplier, String tolerance) {
+    public Resistor(Long id, ResistorStrapsColors strap1, ResistorStrapsColors strap2,
+                    ResistorStrapsColors multiplier,ResistorStrapsColors tolerance) {
         this.strap1 = strap1;
         this.strap2 = strap2;
         this.multiplier = multiplier;
@@ -30,7 +37,8 @@ public class Resistor {
         this.id = id;
     }
 
-    public Resistor(String strap1, String strap2, String multiplier, String tolerance) {
+    public Resistor(ResistorStrapsColors strap1, ResistorStrapsColors strap2,
+                    ResistorStrapsColors multiplier, ResistorStrapsColors tolerance) {
         this.strap1 = strap1;
         this.strap2 = strap2;
         this.multiplier = multiplier;

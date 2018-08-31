@@ -1,19 +1,55 @@
 package com.electronics_elements_calculator.service;
 
-import com.electronics_elements_calculator.model.Resistor;
+import org.springframework.stereotype.Service;
 
+@Service
 public class MainService {
 
-    public static void main(String[] args) {
+//    public void chooseWhichElement(TypeOfElement typeOfElement) {
+//        switch (typeOfElement) {
+//            case RESISTOR:
+//                ResistorService resistorService = new ResistorService();
+//                resistorService.createResistor();
+//
+//        }
+//    }
 
-            Resistor resistor1 = new Resistor(34523523L, "żółty","czarny", "czarny", "czerwony");
-            ResistorService resistorService = new ResistorService();
+//    public static void main(String[] args) {
+//
+//        ResistorService resistorService = new ResistorService();
+//
+//        Resistor resistor1 = new Resistor( ResistorStrapsColors.ZOLTY,
+//                ResistorStrapsColors.CZARNY, ResistorStrapsColors.CZARNY, ResistorStrapsColors.CZERWONY);
+//
+//        Resistor resistor2 = new Resistor(ResistorStrapsColors.ZOLTY, ResistorStrapsColors.FIOLETOWY,
+//                ResistorStrapsColors.BIALY, ResistorStrapsColors.CZERWONY);
+//
+//        System.out.println(resistorService.resistanceOfTheResistor(resistor1));
+//        System.out.println(resistorService.toleranceOfTheResistor(resistor1));
+//        System.out.println();
+//        System.out.println(resistorService.resistanceOfTheResistor(resistor2));
+//        System.out.println(resistorService.toleranceOfTheResistor(resistor2));
+//        System.out.println();
+//
+//
+//        resistorService.elementAddToList(resistor1);
+//        resistorService.elementAddToList(resistor2);
+//
+//        for (Object o: resistorService.getResistorList()
+//             ) {
+//
+//            System.out.println(o.toString());
+//
+//        }
+//
+//        resistorService.elementRemoveFromList(9);
+//
+//        for (Object o: resistorService.getResistorList()
+//                ) {
+//
+//            System.out.println(o.toString());
+//
+//        }
 
-            System.out.println(resistorService.resistanceOfTheResistor(resistor1));
-            System.out.println(resistorService.toleranceOfTheResistor(resistor1));
-
-            resistorService.createResistor(new Resistor("czarny","czarny", "czarny", "czerwony"));
-
-
-    }
+   // }
 }
